@@ -1,0 +1,166 @@
+{
+  "Boxer": {
+    "peso_medio_kg": 32,
+    "tamaño": "Grande",
+    "enfermedades_predisposicion": [
+      {
+        "enfermedad": "Dermatitis alérgica",
+        "probabilidad": "Alta",
+        "factor": 1.5
+      },
+      {
+        "enfermedad": "Otitis externa",
+        "probabilidad": "Media",
+        "factor": 1.3
+      },
+      {
+        "enfermedad": "Insuficiencia cardíaca",
+        "probabilidad": "Media",
+        "factor": 1.2
+      },
+      {
+        "enfermedad": "Displasia de cadera",
+        "probabilidad": "Media",
+        "factor": 1.2
+      }
+    ],
+    "medicamentos_precaución": [
+      "Isoflurano"
+    ],
+    "edad_geriatrica_años": 7
+  },
+  "Labrador": {
+    "peso_medio_kg": 33,
+    "tamaño": "Grande",
+    "enfermedades_predisposicion": [
+      {
+        "enfermedad": "Dolor/Inflamación articular",
+        "probabilidad": "Alta",
+        "factor": 1.4
+      },
+      {
+        "enfermedad": "Displasia de cadera",
+        "probabilidad": "Alta",
+        "factor": 1.4
+      },
+      {
+        "enfermedad": "Insuficiencia cardíaca",
+        "probabilidad": "Media",
+        "factor": 1.2
+      }
+    ]
+  },
+  "Pastor Alemán": {
+    "peso_medio_kg": 35,
+    "tamaño": "Grande",
+    "enfermedades_predisposicion": [
+      {
+        "enfermedad": "Displasia de cadera",
+        "probabilidad": "Alta",
+        "factor": 1.5
+      },
+      {
+        "enfermedad": "Dolor/Inflamación articular",
+        "probabilidad": "Media",
+        "factor": 1.3
+      },
+      {
+        "enfermedad": "Insuficiencia pancreática",
+        "probabilidad": "Media",
+        "factor": 1.2
+      }
+    ]
+  },
+  "Bulldog": {
+    "peso_medio_kg": 25,
+    "tamaño": "Pequeño-Medio",
+    "enfermedades_predisposicion": [
+      {
+        "enfermedad": "Dermatitis alérgica",
+        "probabilidad": "Alta",
+        "factor": 1.6
+      },
+      {
+        "enfermedad": "Otitis externa",
+        "probabilidad": "Alta",
+        "factor": 1.5
+      },
+      {
+        "enfermedad": "Problemas respiratorios",
+        "probabilidad": "Media",
+        "factor": 1.3
+      }
+    ]
+  },
+  "Cocker": {
+    "peso_medio_kg": 14,
+    "tamaño": "Pequeño-Medio",
+    "enfermedades_predisposicion": [
+      {
+        "enfermedad": "Otitis externa",
+        "probabilidad": "Alta",
+        "factor": 1.6
+      },
+      {
+        "enfermedad": "Dermatitis alérgica",
+        "probabilidad": "Alta",
+        "factor": 1.5
+      }
+    ]
+  },
+  "Chihuahua": {
+    "peso_medio_kg": 2.5,
+    "tamaño": "Toy",
+    "enfermedades_predisposicion": [
+      {
+        "enfermedad": "Insuficiencia cardíaca",
+        "probabilidad": "Media",
+        "factor": 1.4
+      },
+      {
+        "enfermedad": "Problemas dentales",
+        "probabilidad": "Media",
+        "factor": 1.3
+      }
+    ],
+    "precaución_anestesia": true
+  },
+  "Gato Persa": {
+    "peso_medio_kg": 4,
+    "tamaño": "Pequeño",
+    "enfermedades_predisposicion": [
+      {
+        "enfermedad": "Infección urinaria",
+        "probabilidad": "Media",
+        "factor": 1.3
+      },
+      {
+        "enfermedad": "Dermatitis alérgica",
+        "probabilidad": "Media",
+        "factor": 1.2
+      }
+    ]
+  },
+  "Gato Siamés": {
+    "peso_medio_kg": 3.5,
+    "tamaño": "Pequeño",
+    "enfermedades_predisposicion": [
+      {
+        "enfermedad": "Insuficiencia renal",
+        "probabilidad": "Media",
+        "factor": 1.2
+      }
+    ]
+  },
+  "Gato Británico": {
+    "peso_medio_kg": 5,
+    "tamaño": "Pequeño-Medio",
+    "enfermedades_predisposicion": [
+      {
+        "enfermedad": "Infección urinaria",
+        "probabilidad": "Media",
+        "factor": 1.2
+      }
+    ]
+  }
+}

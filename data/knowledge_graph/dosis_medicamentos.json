@@ -1,0 +1,72 @@
+{
+  "Antiparasitario_Topico": {
+    "via_administracion": "Tópica (Pipeta/Spot-on)",
+    "frecuencia_dias": 28,
+    "duracion_aplicaciones": 1,
+    "notas": "Aplicar directamente sobre la piel en la base de la cabeza",
+    "ajustes_peso": {
+      "peso_minimo_kg": 2,
+      "peso_maximo_kg": 60
+    }
+  },
+  "Antiparasitario_Oral": {
+    "via_administracion": "Oral (Comprimido/Tableta masticable)",
+    "dosis_mg_kg": 0.5,
+    "frecuencia_dias": 30,
+    "duracion_meses": 12,
+    "notas": "Dar con comida. Masticar bien."
+  },
+  "Antiparasitario_Inyectable": {
+    "via_administracion": "Inyectable (IM o SC)",
+    "dosis_mg_kg": 0.2,
+    "frecuencia_dias": 7,
+    "duracion_dias": 21,
+    "notas": "Aplicar en zona de la cruz. Repetir cada 7 días x3"
+  },
+  "Antihelmintico": {
+    "via_administracion": "Oral (Comprimido)",
+    "dosis_mg_kg": 0.5,
+    "frecuencia_dias": "Una dosis",
+    "duracion_dias": 1,
+    "notas": "Dosis única. Repetir cada 3 meses en prevención",
+    "ajustes_edad": {
+      "cachorro_semanas": 6,
+      "frecuencia_cachorro": "2 semanas"
+    }
+  },
+  "Antibiotico_Oral": {
+    "via_administracion": "Oral (Comprimido/Suspensión)",
+    "dosis_mg_kg": 15,
+    "frecuencia_horas": 8,
+    "duracion_dias": 7,
+    "notas": "Completar el tratamiento aunque mejore. Con o sin comida."
+  },
+  "Antibiotico_Inyectable": {
+    "via_administracion": "Inyectable (IM/IV)",
+    "dosis_mg_kg": 10,
+    "frecuencia_horas": 24,
+    "duracion_dias": 5,
+    "notas": "Aplicar IM profundo o IV lento"
+  },
+  "Antiinflamatorio_Oral": {
+    "via_administracion": "Oral (Comprimido)",
+    "dosis_mg_kg": 0.2,
+    "frecuencia_horas": 24,
+    "duracion_dias": 5,
+    "notas": "Tomar con comida. No exceder duración sin veterinario."
+  },
+  "Corticoesteroide": {
+    "via_administracion": "Oral (Comprimido) / Inyectable",
+    "dosis_mg_kg": 0.5,
+    "frecuencia_horas": 12,
+    "notas": "Solo bajo indicación veterinaria. Ajustar dosis gradualmente.",
+    "advertencia": "SOLO BAJO PRESCRIPCIÓN"
+  },
+  "Analgesico": {
+    "via_administracion": "Oral (Comprimido)",
+    "dosis_mg_kg": 5,
+    "frecuencia_horas": 8,
+    "duracion_dias": 3,
+    "notas": "Para dolor moderado. No prolongar sin evaluación."
+  }
+}

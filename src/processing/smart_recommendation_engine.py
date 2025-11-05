@@ -4,6 +4,7 @@ Motor de recomendación INTELIGENTE que:
 - Calcula dosis exacta por peso
 - Considera predisposiciones de raza
 - Extrae parámetros de texto natural
+- Compatible con ambas interfaces (Chat + Clásico)
 """
 
 import json
@@ -58,18 +59,113 @@ class SmartRecommendationEngine:
         print(f"   - {len(self.dosis)} categorías de dosis")
         print(f"   - {len(self.razas)} razas\n")
     
+    # ========== MÉTODOS COMPATIBILIDAD BÁSICA ==========
+    
+    def listar_enfermedades(self, especie: str = None) -> Dict[str, List[str]]:
+        """Lista todas las enfermedades disponibles (compatible con motor básico)"""
+        resultado = {}
+        
+        for clave_enf, datos in self.enfermedades.items():
+            esp = datos['especie']
+            
+            if especie and esp != especie:
+                continue
+            
+            if esp not in resultado:
+                resultado[esp] = []
+            
+            resultado[esp].append(datos['nombre'])
+        
+        # Ordena alfabéticamente
+        for esp in resultado:
+            resultado[esp] = sorted(list(set(resultado[esp])))
+        
+        return resultado
+    
+    def buscar_medicamento(self, nombre: str) -> List[Dict]:
+        """Busca un medicamento por nombre"""
+        nombre_lower = nombre.lower()
+        resultados = []
+        
+        for med_id, med in self.medicamentos.items():
+            if nombre_lower in med['nombre'].lower():
+                resultados.append({
+                    'id': med_id,
+                    'nombre': med['nombre'],
+                    'numero_registro': med['numero_registro'],
+                    'principios_activos': med['principios_activos'],
+                    'especie': med['especie'],
+                    'prescripcion': med['prescripcion'],
+                    'estado': med['estado']
+                })
+        
+        return resultados
+    
+    def recomendar(self, enfermedad: str, especie: str) -> Tuple[bool, List[Dict]]:
+        """Recomienda medicamentos para una enfermedad (compatible con motor básico)"""
+        clave_enf = f"{enfermedad}_{especie}"
+        
+        if clave_enf not in self.enfermedades:
+            return False, []
+        
+        datos_enfermedad = self.enfermedades[clave_enf]
+        med_ids = datos_enfermedad['medicamentos_asociados']
+        
+        if not med_ids:
+            return False, []
+        
+        # Obtiene datos completos de los medicamentos
+        medicamentos_recomendados = []
+        
+        for med_id in med_ids[:10]:  # Limita a TOP 10
+            med = self.medicamentos.get(med_id, {})
+            
+            medicamentos_recomendados.append({
+                'nombre': med.get('nombre'),
+                'numero_registro': med.get('numero_registro'),
+                'principios_activos': med.get('principios_activos', []),
+                'presentacion': med.get('presentacion'),
+                'titular': med.get('titular'),
+                'prescripcion': med.get('prescripcion'),
+                'estado': med.get('estado'),
+                'fecha_comercializado': med.get('fecha_comercializado'),
+                'especie': med.get('especie'),
+                'indicaciones': datos_enfermedad.get('indicaciones'),
+                'contraindicaciones': datos_enfermedad.get('contraindicaciones'),
+                'notas': datos_enfermedad.get('notas'),
+                'categoria': datos_enfermedad.get('categoria')
+            })
+        
+        return True, medicamentos_recomendados
+    
+    def obtener_estadisticas(self) -> Dict:
+        """Obtiene estadísticas del grafo"""
+        meds_perro = sum(1 for m in self.medicamentos.values() if m['especie'] == 'Perro')
+        meds_gato = sum(1 for m in self.medicamentos.values() if m['especie'] == 'Gato')
+        
+        enfs_perro = sum(1 for e in self.enfermedades.values() if e['especie'] == 'Perro')
+        enfs_gato = sum(1 for e in self.enfermedades.values() if e['especie'] == 'Gato')
+        
+        return {
+            'total_medicamentos': len(self.medicamentos),
+            'medicamentos_perro': meds_perro,
+            'medicamentos_gato': meds_gato,
+            'total_enfermedades': len(self.enfermedades),
+            'enfermedades_perro': enfs_perro,
+            'enfermedades_gato': enfs_gato,
+            'total_relaciones': len(self.relaciones)
+        }
+    
+    # ========== MÉTODOS INTELIGENTES (NUEVOS) ==========
+    
     def extraer_parametros_texto(self, texto: str) -> Dict:
-        """
-        Extrae parámetros de texto natural
-        Ej: "Boxer de 25kg con picazón" 
-        → {'raza': 'Boxer', 'peso': 25, 'sintomas': ['picazón']}
-        """
+        """Extrae parámetros de texto natural"""
         
         params = {
             'raza': None,
             'peso': None,
             'edad': None,
-            'especie': 'Perro',  # Default
+            'especie': 'Perro',
             'sintomas': [],
             'condicion': 'normal'
         }
@@ -80,7 +176,7 @@ class SmartRecommendationEngine:
         if 'gato' in texto_lower or 'felino' in texto_lower:
             params['especie'] = 'Gato'
         
-        # Extraer peso (25kg, 25 kg, 25 kilogramos)
+        # Extraer peso
         match_peso = re.search(r'(\d+(?:\.?\d+)?)\s*(?:kg|kilogramos?)', texto_lower)
         if match_peso:
             params['peso'] = float(match_peso.group(1))
@@ -90,7 +186,7 @@ class SmartRecommendationEngine:
         if match_edad:
             params['edad'] = f"{match_edad.group(1)} {match_edad.group(2)}"
         
-        # Detectar razas (sin considerar tildes/acentos)
+        # Detectar razas (sin considerar tildes)
         razas_keys = list(self.razas.keys())
         texto_normalizado = texto_lower.replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u')
         
@@ -130,7 +226,7 @@ class SmartRecommendationEngine:
         return params
     
     def obtener_categoria_medicamento(self, principios: List[str]) -> str:
-        """Deduce la categoría del medicamento por sus principios activos"""
+        """Deduce la categoría del medicamento"""
         
         for principio in principios:
             for principio_mapped, categoria in self.categorias.items():
@@ -140,81 +236,9 @@ class SmartRecommendationEngine:
         
         return 'Otro'
     
-    def calcular_puntuacion(self, medicamento: Dict, 
-                           enfermedad: str, 
-                           especie: str,
-                           peso: float,
-                           raza: str = None) -> float:
-        """
-        Calcula puntuación inteligente del medicamento para el caso
-        
-        Criterios:
-        - Es para la enfermedad correcta: +100
-        - Es para la especie correcta: +50
-        - El peso es compatible: +30
-        - La raza no tiene contraindicaciones: +20
-        """
-        
-        puntuacion = 0
-        med_id = None
-        
-        # Encontrar ID del medicamento
-        for mid, med in self.medicamentos.items():
-            if med['nombre'] == medicamento['nombre']:
-                med_id = mid
-                break
-        
-        if not med_id:
-            return 0
-        
-        # +100: Indicado para la enfermedad
-        clave_enf = f"{enfermedad}_{especie}"
-        for rel in self.relaciones:
-            if rel['hacia_medicamento'] == med_id and rel['desde_enfermedad'] == clave_enf:
-                puntuacion += 100
-                break
-        
-        # +50: Es para la especie correcta
-        if medicamento.get('especie') == especie:
-            puntuacion += 50
-        
-        # +30: Compatibilidad de peso
-        if peso:
-            categoria = self.obtener_categoria_medicamento(medicamento.get('principios_activos', []))
-            dosis_info = self.dosis.get(categoria, {})
-            
-            peso_min = dosis_info.get('ajustes_peso', {}).get('peso_minimo_kg', 0)
-            peso_max = dosis_info.get('ajustes_peso', {}).get('peso_maximo_kg', 100)
-            
-            if peso_min <= peso <= peso_max:
-                puntuacion += 30
-        
-        # +20: Sin contraindicaciones de raza
-        if raza and raza in self.razas:
-            contraindicados = self.razas[raza].get('medicamentos_precaución', [])
-            conflicto = False
-            for principio in medicamento.get('principios_activos', []):
-                if any(c.lower() in principio.lower() for c in contraindicados):
-                    conflicto = True
-                    break
-            
-            if not conflicto:
-                puntuacion += 20
-        
-        # BONUS: Si la raza es predispuesta a la enfermedad, aumenta puntuación
-        if raza and raza in self.razas:
-            for pred in self.razas[raza].get('enfermedades_predisposicion', []):
-                if pred['enfermedad'].lower() in enfermedad.lower():
-                    puntuacion += pred.get('factor', 1) * 15  # Bonus por relevancia
-        
-        return puntuacion
-    
     def recomendar_top_10(self, enfermedad: str, especie: str, 
                          peso: float = None, raza: str = None) -> List[Dict]:
-        """
-        Recomienda TOP 10 medicamentos (no 34)
-        Filtrados y ordenados por relevancia
-        """
+        """Recomienda TOP 10 medicamentos filtrados inteligentemente"""
         
         clave_enf = f"{enfermedad}_{especie}"
         
@@ -233,9 +257,43 @@ class SmartRecommendationEngine:
         for med_id in med_ids:
             med = self.medicamentos.get(med_id, {})
             
-            puntuacion = self.calcular_puntuacion(
-                med, enfermedad, especie, peso, raza
-            )
+            puntuacion = 0
+            
+            # +100: Indicado para la enfermedad
+            puntuacion += 100
+            
+            # +50: Es para la especie correcta
+            if med.get('especie') == especie:
+                puntuacion += 50
+            
+            # +30: Compatibilidad de peso
+            if peso:
+                categoria = self.obtener_categoria_medicamento(med.get('principios_activos', []))
+                dosis_info = self.dosis.get(categoria, {})
+                
+                peso_min = dosis_info.get('ajustes_peso', {}).get('peso_minimo_kg', 0)
+                peso_max = dosis_info.get('ajustes_peso', {}).get('peso_maximo_kg', 100)
+                
+                if peso_min <= peso <= peso_max:
+                    puntuacion += 30
+            
+            # +20: Sin contraindicaciones de raza
+            if raza and raza in self.razas:
+                contraindicados = self.razas[raza].get('medicamentos_precaución', [])
+                conflicto = False
+                for principio in med.get('principios_activos', []):
+                    if any(c.lower() in principio.lower() for c in contraindicados):
+                        conflicto = True
+                        break
+                
+                if not conflicto:
+                    puntuacion += 20
+            
+            # BONUS: Si la raza es predispuesta a la enfermedad
+            if raza and raza in self.razas:
+                for pred in self.razas[raza].get('enfermedades_predisposicion', []):
+                    if pred['enfermedad'].lower() in enfermedad.lower():
+                        puntuacion += pred.get('factor', 1) * 15
             
             medicamentos_puntuados.append({
                 'medicamento': med,
@@ -249,14 +307,11 @@ class SmartRecommendationEngine:
         # Obtener TOP 10
         top_10 = medicamentos_puntuados[:10]
         
-        # Enriquecer con información de dosis
+        # Enriquecer con información
         resultado = []
         for item in top_10:
             med = item['medicamento']
-            categoria = self.obtener_categoria_medicamento(
-                med.get('principios_activos', [])
-            )
-            
+            categoria = self.obtener_categoria_medicamento(med.get('principios_activos', []))
             dosis_info = self.dosis.get(categoria, {})
             
             resultado.append({
@@ -276,56 +331,8 @@ class SmartRecommendationEngine:
         
         return resultado
     
-    def calcular_dosis_exacta(self, medicamento_id: str, peso: float, 
-                             edad_meses: int = None, condicion: str = 'normal') -> Dict:
-        """
-        Calcula dosis exacta del medicamento
-        """
-        
-        med = self.medicamentos.get(medicamento_id, {})
-        categoria = self.obtener_categoria_medicamento(med.get('principios_activos', []))
-        dosis_info = self.dosis.get(categoria, {})
-        
-        if not dosis_info:
-            return {'error': 'No hay información de dosis para este medicamento'}
-        
-        dosis_mg_kg = dosis_info.get('dosis_mg_kg')
-        
-        resultado = {
-            'via': dosis_info.get('via_administracion', 'Ver prospecto'),
-            'frecuencia': dosis_info.get('frecuencia_horas') or dosis_info.get('frecuencia_dias'),
-            'duracion': dosis_info.get('duracion_dias'),
-            'notas': dosis_info.get('notas'),
-        }
-        
-        # Calcular dosis en mg si es posible
-        if dosis_mg_kg and peso:
-            dosis_total = peso * dosis_mg_kg
-            resultado['dosis_mg'] = round(dosis_total, 1)
-            resultado['dosis_texto'] = f"{resultado['dosis_mg']} mg"
-        
-        # Ajustes por edad
-        if condicion == 'cachorro' and edad_meses and edad_meses < 12:
-            resultado['ajuste_edad'] = 'Dosis puede requerir ajuste en cachorro'
-        
-        # Advertencias
-        if 'SOLO BAJO PRESCRIPCIÓN' in dosis_info.get('advertencia', ''):
-            resultado['advertencia'] = 'REQUIERE PRESCRIPCIÓN VETERINARIA'
-        
-        return resultado
-    
     def procesar_consulta_chat(self, texto_consulta: str) -> Dict:
-        """
-        Procesa una consulta completa en lenguaje natural
-        
-        Entrada: "Tengo un boxer de 25kg con picazón"
-        Salida: {
-            'parametros': {...},
-            'enfermedades_inferidas': [...],
-            'medicamentos': [...],
-            'dosis': [...]
-        }
-        """
+        """Procesa una consulta completa en lenguaje natural"""
         
         print(f"\n{'='*60}")
         print(f"🏥 PROCESANDO CONSULTA: {texto_consulta}")
@@ -339,17 +346,12 @@ class SmartRecommendationEngine:
         print(f"   - Raza: {parametros['raza']}" if parametros['raza'] else "   - Raza: No detectada")
         print(f"   - Síntomas: {', '.join(parametros['sintomas'])}\n" if parametros['sintomas'] else "   - Síntomas: Ninguno\n")
         
-        # 2. Obtener recomendaciones
-        # Para este demo, usamos el síntoma más común
-        # En producción, se inferiría enfermedad de síntomas
-        
         resultado = {
             'parametros': parametros,
             'medicamentos_recomendados': [],
-            'dosis_recomendadas': []
         }
         
-        # Obtener enfermedades para los síntomas (mapeo completo)
+        # Mapeo síntoma → enfermedad
         enfermedades_sintomas = {
             'picazón': 'Dermatitis alérgica',
             'otitis': 'Otitis externa',
@@ -362,11 +364,11 @@ class SmartRecommendationEngine:
             'dermatitis': 'Dermatitis alérgica',
         }
         
+        # 2. Buscar medicamentos
         for sintoma in parametros['sintomas']:
             if sintoma in enfermedades_sintomas:
                 enfermedad = enfermedades_sintomas[sintoma]
                 
-                # 3. Buscar medicamentos
                 medicamentos = self.recomendar_top_10(
                     enfermedad,
                     parametros['especie'],
@@ -376,21 +378,19 @@ class SmartRecommendationEngine:
                 
                 if medicamentos:
                     print(f"✅ Medicamentos para {enfermedad}: {len(medicamentos)} encontrados\n")
-                    resultado['medicamentos_recomendados'].extend(medicamentos[:5])  # Top 5
+                    resultado['medicamentos_recomendados'].extend(medicamentos[:5])
         
         return resultado
 
 
 if __name__ == "__main__":
-    # Test
     engine = SmartRecommendationEngine()
     
-    # Caso 1: Boxer con picazón
-    resultado = engine.procesar_consulta_chat("Boxer de 25kg con picazón")
+    # Test
+    resultado = engine.procesar_consulta_chat("Pastor alemán de 30kg con dolor en las caderas")
     
     print(f"📋 RECOMENDACIONES:")
     if resultado['medicamentos_recomendados']:
         for i, med in enumerate(resultado['medicamentos_recomendados'][:5], 1):
             print(f"\n{i}. {med['nombre']}")
             print(f"   Puntuación: {med['puntuacion']}")
-            print(f"   Categoría: {med['categoria']}")
