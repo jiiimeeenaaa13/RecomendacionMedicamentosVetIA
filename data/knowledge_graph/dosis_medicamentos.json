@@ -68,5 +68,15 @@
     "frecuencia_horas": 8,
     "duracion_dias": 3,
     "notas": "Para dolor moderado. No prolongar sin evaluación."
+  },"ANTIINFLAMATORIO_MELOXICAM": {
+    "dosis_mg_kg": 0.2,
+    "frecuencia": "Cada 24h",
+    "via": "Oral"
+  },
+  "DERMATOLOGICO_APOQUEL": {
+    "dosis_mg_kg": 0.5,
+    "frecuencia": "Cada 12h",
+    "via": "Oral"
   }
+
 }

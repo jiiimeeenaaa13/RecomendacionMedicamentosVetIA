@@ -1,0 +1,7 @@
+[theme]
+base = "light"
+primaryColor = "#2E7D32"  # Verde veterinario para botones
+backgroundColor = "#FFFFFF" # Fondo blanco puro
+secondaryBackgroundColor = "#F0F2F6" # Gris muy clarito para la barra lateral y cajas
+textColor = "#31333F" # Texto gris oscuro (no negro total para ser suave)
+font = "sans serif"

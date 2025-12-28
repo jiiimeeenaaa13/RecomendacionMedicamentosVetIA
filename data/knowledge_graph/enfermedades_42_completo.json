@@ -1,0 +1,905 @@
+{
+  "metadata": {
+    "total_enfermedades": 44,
+    "fecha_creacion": "2024-11-26",
+    "fuente": "CIMAVET + Dr. Helena Adalid Marín",
+    "nota": "Generado automáticamente desde CSVs existentes"
+  },
+  "enfermedades": {
+    "Pulgas_Perro": {
+      "nombre": "Pulgas",
+      "categoria": "Parasitología",
+      "especie": "Perro",
+      "síntomas": [
+        "Fipronilo",
+        "Imidacloprid",
+        "Fluralaner",
+        "Fipronil",
+        "Selamectina"
+      ],
+      "indicaciones": "Infestación por pulgas (Ctenocephalides). Tratamiento y prevención.",
+      "contraindicaciones": "Hipersensibilidad conocida al principio activo",
+      "notas": "Fipronilo es el más disponible. Aplicar mensual o según producto.",
+      "medicamentos_asociados": [
+        "med_2",
+        "med_12",
+        "med_13",
+        "med_14",
+        "med_15"
+      ]
+    },
+    "Pulgas_Gato": {
+      "nombre": "Pulgas",
+      "categoria": "Parasitología",
+      "especie": "Gato",
+      "síntomas": [
+        "Fipronilo",
+        "Imidacloprid",
+        "Selamectina",
+        "Fluralaner"
+      ],
+      "indicaciones": "Infestación por pulgas en gatos",
+      "contraindicaciones": "Hipersensibilidad. Evitar productos no específicos para gatos",
+      "notas": "Usar solo productos formulados para gatos",
+      "medicamentos_asociados": [
+        "med_1438",
+        "med_1439",
+        "med_1441",
+        "med_1442",
+        "med_1444"
+      ]
+    },
+    "Garrapatas_Perro": {
+      "nombre": "Garrapatas",
+      "categoria": "Parasitología",
+      "especie": "Perro",
+      "síntomas": [
+        "Fipronilo",
+        "Permetrina",
+        "Imidacloprid",
+        "Fluralaner",
+        "Deltametrina"
+      ],
+      "indicaciones": "Infestación por garrapatas. Prevención de enfermedades transmitidas por garrapatas.",
+      "contraindicaciones": "Hipersensibilidad. En gatos evitar piretroides",
+      "notas": "Aplicación mensual. Considera desparasitantes periódicos.",
+      "medicamentos_asociados": [
+        "med_2",
+        "med_12",
+        "med_13",
+        "med_14",
+        "med_15"
+      ]
+    },
+    "Sarna_sarcóptica_Perro": {
+      "nombre": "Sarna sarcóptica",
+      "categoria": "Parasitología",
+      "especie": "Perro",
+      "síntomas": [
+        "Ivermectina",
+        "Milbemicina Oxima",
+        "Selamectina",
+        "Moxidectina",
+        "Fluralaner"
+      ],
+      "indicaciones": "Sarcoptes scabiei. Causa picazón severa y alopecia.",
+      "contraindicaciones": "Razas sensibles a ivermectina (Collie, Shetland). Menores de 6 semanas.",
+      "notas": "Tratar contactos cercanos. Repetir en 7-14 días según producto.",
+      "medicamentos_asociados": [
+        "med_21",
+        "med_28",
+        "med_30",
+        "med_33",
+        "med_44"
+      ]
+    },
+    "Sarna_sarcóptica_Gato": {
+      "nombre": "Sarna sarcóptica",
+      "categoria": "Parasitología",
+      "especie": "Gato",
+      "síntomas": [
+        "Milbemicina Oxima",
+        "Selamectina",
+        "Moxidectina",
+        "Ivermectina"
+      ],
+      "indicaciones": "Sarcoptes scabiei en gatos. Menos frecuente que en perros.",
+      "contraindicaciones": "Hipersensibilidad. Gatos sensibles a ivermectina",
+      "notas": "Preferir milbemicina u otros macrolídicos en gatos",
+      "medicamentos_asociados": [
+        "med_1439",
+        "med_1442",
+        "med_1453",
+        "med_1454",
+        "med_1455"
+      ]
+    },
+    "Nematodos_intestinales_Perro": {
+      "nombre": "Nematodos intestinales",
+      "categoria": "Parasitología",
+      "especie": "Perro",
+      "síntomas": [
+        "Prazicuantel",
+        "Pirantel Embonato",
+        "Febantel",
+        "Moxidectina",
+        "Milbemicina Oxima"
+      ],
+      "indicaciones": "Ascaris, Uncinaria, Trichuris. Desparasitación intestinal.",
+      "contraindicaciones": "Hipersensibilidad. Animales muy debilitados",
+      "notas": "Repetir cada 3 meses. Cachorros cada 2 semanas hasta 3 meses.",
+      "medicamentos_asociados": [
+        "med_1",
+        "med_21",
+        "med_28",
+        "med_30",
+        "med_44"
+      ]
+    },
+    "Nematodos_intestinales_Gato": {
+      "nombre": "Nematodos intestinales",
+      "categoria": "Parasitología",
+      "especie": "Gato",
+      "síntomas": [
+        "Prazicuantel",
+        "Pirantel Embonato",
+        "Moxidectina",
+        "Milbemicina Oxima",
+        "Emodepsida"
+      ],
+      "indicaciones": "Desparasitación en gatos",
+      "contraindicaciones": "Hipersensibilidad",
+      "notas": "Repetir según recomendaciones veterinarias",
+      "medicamentos_asociados": [
+        "med_1442",
+        "med_1448",
+        "med_1453",
+        "med_1454",
+        "med_1455"
+      ]
+    },
+    "Otitis_externa_Perro": {
+      "nombre": "Otitis externa",
+      "categoria": "Dermatología",
+      "especie": "Perro",
+      "síntomas": [
+        "Enrofloxacino",
+        "Marbofloxacino",
+        "Clindamicina Hidrocloruro",
+        "Metronidazol"
+      ],
+      "indicaciones": "Inflamación del conducto auditivo. Infecciones bacterianas u hongos.",
+      "contraindicaciones": "Tímpano perforado con estos sistémicos",
+      "notas": "Limpiar conducto antes del tratamiento. Considerar causa subyacente.",
+      "medicamentos_asociados": [
+        "med_3",
+        "med_8",
+        "med_46",
+        "med_117",
+        "med_124"
+      ]
+    },
+    "Otitis_externa_Gato": {
+      "nombre": "Otitis externa",
+      "categoria": "Dermatología",
+      "especie": "Gato",
+      "síntomas": [
+        "Enrofloxacino",
+        "Marbofloxacino",
+        "Clindamicina Hidrocloruro",
+        "Metronidazol"
+      ],
+      "indicaciones": "Otitis en gatos",
+      "contraindicaciones": "Tímpano perforado",
+      "notas": "Menos frecuente que en perros. Investigar causa (ácaros, hongos, etc).",
+      "medicamentos_asociados": [
+        "med_1446",
+        "med_1498",
+        "med_1657"
+      ]
+    },
+    "Dermatitis_alérgica_Perro": {
+      "nombre": "Dermatitis alérgica",
+      "categoria": "Dermatología",
+      "especie": "Perro",
+      "síntomas": [
+        "Prednisolona",
+        "Dexametasona Fosfato Sodio",
+        "Carprofeno",
+        "Meloxicam",
+        "Oclacitinib Maleato"
+      ],
+      "indicaciones": "Dermatitis atópica. Alergia a alimentos o ambiente. Reacciones de hipersensibilidad.",
+      "contraindicaciones": "Infecciones bacterianas activas sin tratar. Diabetes descontrolada.",
+      "notas": "Identificar causa. Corticoides a dosis bajas para crónico. Considerar ciclosporina.",
+      "medicamentos_asociados": [
+        "med_0",
+        "med_18",
+        "med_19",
+        "med_27",
+        "med_46"
+      ]
+    },
+    "Dermatitis_alérgica_Gato": {
+      "nombre": "Dermatitis alérgica",
+      "categoria": "Dermatología",
+      "especie": "Gato",
+      "síntomas": [
+        "Prednisolona",
+        "Dexametasona Fosfato Sodio",
+        "Meloxicam"
+      ],
+      "indicaciones": "Dermatitis en gatos",
+      "contraindicaciones": "Infecciones activas",
+      "notas": "Gatos son sensibles a muchos fármacos. Preferir prednisolona.",
+      "medicamentos_asociados": [
+        "med_1445",
+        "med_1447",
+        "med_1476",
+        "med_1482",
+        "med_1485"
+      ]
+    },
+    "Infección_bacteriana_sistémica_Perro": {
+      "nombre": "Infección bacteriana sistémica",
+      "categoria": "Infectología",
+      "especie": "Perro",
+      "síntomas": [
+        "Amoxicilina Trihidrato",
+        "Clavulanato Potasio",
+        "Enrofloxacino",
+        "Marbofloxacino",
+        "Cefalexina Monohidrato",
+        "Clindamicina Hidrocloruro"
+      ],
+      "indicaciones": "Infecciones bacterianas (pneumonía, pielonefritis, etc). Realizar cultivo si es posible.",
+      "contraindicaciones": "Alergia a beta-lactámicos. Hipersensibilidad al fármaco.",
+      "notas": "Primera línea: Amoxicilina-clavulánico. Ajustar según cultivo y sensibilidad.",
+      "medicamentos_asociados": [
+        "med_3",
+        "med_8",
+        "med_43",
+        "med_45",
+        "med_46"
+      ]
+    },
+    "Infección_bacteriana_sistémica_Gato": {
+      "nombre": "Infección bacteriana sistémica",
+      "categoria": "Infectología",
+      "especie": "Gato",
+      "síntomas": [
+        "Amoxicilina Trihidrato",
+        "Clavulanato Potasio",
+        "Enrofloxacino",
+        "Marbofloxacino",
+        "Clindamicina Hidrocloruro"
+      ],
+      "indicaciones": "Infecciones bacterianas en gatos",
+      "contraindicaciones": "Alergia a betalactámicos",
+      "notas": "Gatos sensibles. Realizar cultivo. Considerar dosis adaptadas a peso corporal.",
+      "medicamentos_asociados": [
+        "med_1446",
+        "med_1498",
+        "med_1514",
+        "med_1650",
+        "med_1657"
+      ]
+    },
+    "Infección_urinaria_Perro": {
+      "nombre": "Infección urinaria",
+      "categoria": "Infectología",
+      "especie": "Perro",
+      "síntomas": [
+        "Amoxicilina Trihidrato",
+        "Clavulanato Potasio",
+        "Enrofloxacino",
+        "Marbofloxacino",
+        "Cefalexina Monohidrato"
+      ],
+      "indicaciones": "Cistitis bacteriana. Pielonefritis. Requiere cultivo de orina.",
+      "contraindicaciones": "Insuficiencia renal severa (ajustar dosis)",
+      "notas": "Realizar cultivo y antibiograma. Tratamiento 7-14 días mínimo.",
+      "medicamentos_asociados": [
+        "med_3",
+        "med_8",
+        "med_43",
+        "med_45",
+        "med_46"
+      ]
+    },
+    "Infección_urinaria_Gato": {
+      "nombre": "Infección urinaria",
+      "categoria": "Infectología",
+      "especie": "Gato",
+      "síntomas": [
+        "Amoxicilina Trihidrato",
+        "Clavulanato Potasio",
+        "Enrofloxacino",
+        "Marbofloxacino"
+      ],
+      "indicaciones": "Cistitis en gatos",
+      "contraindicaciones": "Insuficiencia renal",
+      "notas": "Común en gatos. Investigar causa subyacente (cristales, obstrucción).",
+      "medicamentos_asociados": [
+        "med_1446",
+        "med_1498",
+        "med_1514",
+        "med_1650",
+        "med_1657"
+      ]
+    },
+    "Gastroenteritis_Perro": {
+      "nombre": "Gastroenteritis",
+      "categoria": "Gastroenterología",
+      "especie": "Perro",
+      "síntomas": [
+        "Metronidazol",
+        "Clindamicina Hidrocloruro",
+        "Enrofloxacino",
+        "Marbofloxacino"
+      ],
+      "indicaciones": "Diarrea bacteriana o parasitaria. Inflamación gastrointestinal. IBD canina.",
+      "contraindicaciones": "Embarazo (metronidazol). Lactancia.",
+      "notas": "Soporte: dieta blanda, probióticos. Metronidazol si es protozoaria.",
+      "medicamentos_asociados": [
+        "med_3",
+        "med_8",
+        "med_46",
+        "med_117",
+        "med_124"
+      ]
+    },
+    "Gastroenteritis_Gato": {
+      "nombre": "Gastroenteritis",
+      "categoria": "Gastroenterología",
+      "especie": "Gato",
+      "síntomas": [
+        "Metronidazol",
+        "Clindamicina Hidrocloruro",
+        "Enrofloxacino",
+        "Marbofloxacino"
+      ],
+      "indicaciones": "Gastroenteritis en gatos",
+      "contraindicaciones": "Embarazo. Lactancia.",
+      "notas": "IBD felina. Considerar causas (alimento, estrés, infecciones).",
+      "medicamentos_asociados": [
+        "med_1446",
+        "med_1498",
+        "med_1657"
+      ]
+    },
+    "Dolor/Inflamación_articular_Perro": {
+      "nombre": "Dolor/Inflamación articular",
+      "categoria": "Analgesia",
+      "especie": "Perro",
+      "síntomas": [
+        "Meloxicam",
+        "Carprofeno",
+        "Robenacoxib",
+        "Firocoxib",
+        "Tramadol Hidrocloruro"
+      ],
+      "indicaciones": "Osteoartritis. Dolor postquirúrgico. Displasia de cadera. AINE recomendados.",
+      "contraindicaciones": "Insuficiencia renal/hepática. Úlcera gástrica. Menores de 8 semanas.",
+      "notas": "Usar protector gástrico si es crónico. Considerar condroprotectores.",
+      "medicamentos_asociados": [
+        "med_7",
+        "med_10",
+        "med_19",
+        "med_60",
+        "med_66"
+      ]
+    },
+    "Dolor/Inflamación_articular_Gato": {
+      "nombre": "Dolor/Inflamación articular",
+      "categoria": "Analgesia",
+      "especie": "Gato",
+      "síntomas": [
+        "Meloxicam",
+        "Tramadol Hidrocloruro",
+        "Robenacoxib"
+      ],
+      "indicaciones": "Dolor articular en gatos. Osteoartritis.",
+      "contraindicaciones": "Insuficiencia renal",
+      "notas": "Meloxicam es preferido. Gatos menos toleran AINE que perros. Dosis adaptadas.",
+      "medicamentos_asociados": [
+        "med_1445",
+        "med_1452",
+        "med_1476",
+        "med_1485",
+        "med_1490"
+      ]
+    },
+    "Insuficiencia_cardíaca_Perro": {
+      "nombre": "Insuficiencia cardíaca",
+      "categoria": "Cardiología",
+      "especie": "Perro",
+      "síntomas": [
+        "Pimobendan",
+        "Benazepril Hidrocloruro",
+        "Doxorrubicina"
+      ],
+      "indicaciones": "Enfermedad degenerativa de válvula mitral. Cardiomiopatía. Insuficiencia cardíaca congestiva.",
+      "contraindicaciones": "Hipotensión severa. Hipertrofia asimétrica del tabique (pimobendan).",
+      "notas": "Pimobendan mejora contractilidad. Benazepril reduce presión. Requiere seguimiento.",
+      "medicamentos_asociados": [
+        "med_73",
+        "med_84",
+        "med_120",
+        "med_157",
+        "med_160"
+      ]
+    },
+    "Hipertiroidismo_Gato": {
+      "nombre": "Hipertiroidismo",
+      "categoria": "Endocrinología",
+      "especie": "Gato",
+      "síntomas": [
+        "Tiamazol",
+        "Levotiroxina Sodica"
+      ],
+      "indicaciones": "Hipertiroidismo felino. Control de hormona tiroidea elevada.",
+      "contraindicaciones": "Hipersensibilidad. Anemia severa.",
+      "notas": "Tiamazol reduce síntesis. Requiere monitoreo regular de T3/T4.",
+      "medicamentos_asociados": [
+        "med_1450",
+        "med_1501",
+        "med_1525",
+        "med_1529",
+        "med_1547"
+      ]
+    },
+    "Diabetes_mellitus_Perro": {
+      "nombre": "Diabetes mellitus",
+      "categoria": "Endocrinología",
+      "especie": "Perro",
+      "síntomas": [
+        "Insulina"
+      ],
+      "indicaciones": "Diabetes mellitus tipo 1. Hiperglucemia.",
+      "contraindicaciones": "Hipoglucemia severa",
+      "notas": "Requiere inyecciones diarias. Dieta y ejercicio importante.",
+      "medicamentos_asociados": [
+        "med_460",
+        "med_1084"
+      ]
+    },
+    "Convulsiones/Epilepsia_Perro": {
+      "nombre": "Convulsiones/Epilepsia",
+      "categoria": "Neurología",
+      "especie": "Perro",
+      "síntomas": [
+        "Fenobarbital",
+        "Levotiroxina Sodica",
+        "Trilostano"
+      ],
+      "indicaciones": "Epilepsia idiopática. Crisis convulsivas.",
+      "contraindicaciones": "Hepatopatía severa. Alergia al fármaco.",
+      "notas": "Fenobarbital es gold standard. Requiere monitoreo hepático.",
+      "medicamentos_asociados": [
+        "med_25",
+        "med_31",
+        "med_82",
+        "med_98",
+        "med_100"
+      ]
+    },
+    "Control_de_celo_Perra": {
+      "nombre": "Control de celo",
+      "categoria": "Reproducción",
+      "especie": "Perra",
+      "síntomas": [
+        "Medroxiprogesterona Acetato"
+      ],
+      "indicaciones": "Supresión de celo. Proestro. Debe usarse ANTES del celo.",
+      "contraindicaciones": "Embarazo confirmado. Hipersensibilidad.",
+      "notas": "Usar solo si animal está en proestro. Eficacia limitada en estro establecido.",
+      "medicamentos_asociados": []
+    },
+    "Inmunización_-_Moquillo/Parvovirus_Perro": {
+      "nombre": "Inmunización - Moquillo/Parvovirus",
+      "categoria": "Inmunización",
+      "especie": "Perro",
+      "síntomas": [
+        "Virus del Moquillo Canino",
+        "Parvovirus Canino",
+        "Vivo Atenuado",
+        "Inactivada"
+      ],
+      "indicaciones": "Vacunación contra moquillo y parvovirus canino. Protección ante virus respiratorios.",
+      "contraindicaciones": "Animales inmunodeprimidos. Embarazo. Enfermedad activa.",
+      "notas": "Vacunas polivalentes disponibles. Protección de 1 año. Refuerzo anual recomendado.",
+      "medicamentos_asociados": [
+        "med_67",
+        "med_72",
+        "med_205",
+        "med_211",
+        "med_227"
+      ]
+    },
+    "Inmunización_-_Leptospira_Perro": {
+      "nombre": "Inmunización - Leptospira",
+      "categoria": "Inmunización",
+      "especie": "Perro",
+      "síntomas": [
+        "Leptospira Interrogans",
+        "Inactivada",
+        "Serovariedad Canicola"
+      ],
+      "indicaciones": "Vacunación contra Leptospira. Protección de enfermedades zoonóticas.",
+      "contraindicaciones": "Enfermedad activa. Inmunodepresión.",
+      "notas": "Importante en zonas de riesgo. Vacunas combinadas disponibles.",
+      "medicamentos_asociados": [
+        "med_67",
+        "med_211",
+        "med_227",
+        "med_243",
+        "med_244"
+      ]
+    },
+    "Inmunización_-_Rabia_Perro": {
+      "nombre": "Inmunización - Rabia",
+      "categoria": "Inmunización",
+      "especie": "Perro",
+      "síntomas": [
+        "Virus Rabia",
+        "Inactivado"
+      ],
+      "indicaciones": "Vacunación contra rabia. Obligatorio en muchas regiones.",
+      "contraindicaciones": "Enfermedad aguda. Inmunodepresión severa.",
+      "notas": "Dosis inicial + refuerzo a 1 año. Luego cada 3 años.",
+      "medicamentos_asociados": [
+        "med_151",
+        "med_227",
+        "med_288",
+        "med_381",
+        "med_448"
+      ]
+    },
+    "Inmunización_-_Respiratorio_Perro": {
+      "nombre": "Inmunización - Respiratorio",
+      "categoria": "Inmunización",
+      "especie": "Perro",
+      "síntomas": [
+        "Bordetella Bronchiseptica",
+        "Parainfluenza Canina",
+        "Adenovirus Canino"
+      ],
+      "indicaciones": "Vacunación contra tos de las perreras y virus respiratorios.",
+      "contraindicaciones": "Enfermedad activa.",
+      "notas": "Importante en perros con exposición a otros perros (guarderías, parques).",
+      "medicamentos_asociados": [
+        "med_211",
+        "med_227",
+        "med_243",
+        "med_288",
+        "med_296"
+      ]
+    },
+    "Inmunización_-_Felina_Gato": {
+      "nombre": "Inmunización - Felina",
+      "categoria": "Inmunización",
+      "especie": "Gato",
+      "síntomas": [
+        "Panleucopenia Felina",
+        "Calicivirus Felino",
+        "Vivo Atenuado",
+        "Inactivada"
+      ],
+      "indicaciones": "Vacunación felina trivalente. Protección contra enfermedades vírales.",
+      "contraindicaciones": "Embarazo. Enfermedad activa.",
+      "notas": "Refuerzo anual. Vacunas combinadas (FVRCP) disponibles.",
+      "medicamentos_asociados": [
+        "med_1556",
+        "med_1569",
+        "med_1594",
+        "med_1620",
+        "med_1626"
+      ]
+    },
+    "Sedación_prequirúrgica_Perro": {
+      "nombre": "Sedación prequirúrgica",
+      "categoria": "Anestesia",
+      "especie": "Perro",
+      "síntomas": [
+        "Medetomidina Hidrocloruro",
+        "Dexmedetomidina",
+        "Acepromazina",
+        "Xilacina"
+      ],
+      "indicaciones": "Sedación para procedimientos. Tranquilización previa a anestesia.",
+      "contraindicaciones": "Enfermedad cardíaca severa. Hipertensión. Diabetes descontrolada.",
+      "notas": "Medetomidina reversible con atipamezol. Requiere monitoreo.",
+      "medicamentos_asociados": [
+        "med_106",
+        "med_154",
+        "med_165",
+        "med_175",
+        "med_249"
+      ]
+    },
+    "Anestesia_general_Perro": {
+      "nombre": "Anestesia general",
+      "categoria": "Anestesia",
+      "especie": "Perro",
+      "síntomas": [
+        "Propofol",
+        "Ketamina",
+        "Tiletamina",
+        "Alfaxalona",
+        "Isoflurano",
+        "Sevoflurano"
+      ],
+      "indicaciones": "Anestesia para cirugía. Anestesia inhalatoria.",
+      "contraindicaciones": "Hipotensión. Insuficiencia cardiopulmonar. Hipocalcemia.",
+      "notas": "Anestesias inyectables vs inhalatorias. Requiere asistencia veterinaria especializada.",
+      "medicamentos_asociados": [
+        "med_51",
+        "med_54",
+        "med_101",
+        "med_159",
+        "med_183"
+      ]
+    },
+    "Pulgas/Garrapatas_orales_Perro": {
+      "nombre": "Pulgas/Garrapatas orales",
+      "categoria": "Parasitología",
+      "especie": "Perro",
+      "síntomas": [
+        "Afoxolaner",
+        "Lotilaner",
+        "Spinosad",
+        "Nitenpiram"
+      ],
+      "indicaciones": "Tratamiento de pulgas y garrapatas con comprimidos orales. Prevención mensual.",
+      "contraindicaciones": "Hipersensibilidad. Gestación no confirmada.",
+      "notas": "Nexgard/Frontpro (Afoxolaner), Credelio (Lotilaner), Comfortis (Spinosad).",
+      "medicamentos_asociados": [
+        "med_6",
+        "med_28",
+        "med_217",
+        "med_270",
+        "med_271"
+      ]
+    },
+    "Pulgas/Garrapatas_orales_Gato": {
+      "nombre": "Pulgas/Garrapatas orales",
+      "categoria": "Parasitología",
+      "especie": "Gato",
+      "síntomas": [
+        "Lotilaner",
+        "Spinosad",
+        "Lufenuron",
+        "Indoxacarb"
+      ],
+      "indicaciones": "Antiparasitarios orales para gatos. Prevención mensual.",
+      "contraindicaciones": "Hipersensibilidad.",
+      "notas": "Credelio (Lotilaner) oral en gatos. Activyl (Indoxacarb) spot-on.",
+      "medicamentos_asociados": [
+        "med_1440",
+        "med_1443",
+        "med_1467",
+        "med_1512",
+        "med_1513"
+      ]
+    },
+    "Arritmias_cardíacas_Perro": {
+      "nombre": "Arritmias cardíacas",
+      "categoria": "Cardiología",
+      "especie": "Perro",
+      "síntomas": [
+        "Diltiazem",
+        "Atenolol",
+        "Propranolol",
+        "Digoxina"
+      ],
+      "indicaciones": "Control de arritmias. Cardiopatía dilatada. Fibrilación auricular.",
+      "contraindicaciones": "Bloqueo AV. Bradicardia severa. Insuficiencia cardíaca descompensada.",
+      "notas": "Requiere ECG y seguimiento. Dosificación ajustada por clínica.",
+      "medicamentos_asociados": []
+    },
+    "Edema/Congestión_cardíaca_Perro": {
+      "nombre": "Edema/Congestión cardíaca",
+      "categoria": "Cardiología",
+      "especie": "Perro",
+      "síntomas": [
+        "Furosemida",
+        "Torasemida",
+        "Espironolactona",
+        "Clorotiazida"
+      ],
+      "indicaciones": "Tratamiento del edema pulmonar. Ascitis. Insuficiencia cardíaca congestiva.",
+      "contraindicaciones": "Deshidratación severa. Insuficiencia renal avanzada.",
+      "notas": "Diuréticos de asa (furosemida, torasemida). Ahorradores de potasio (espironolactona).",
+      "medicamentos_asociados": [
+        "med_20",
+        "med_157",
+        "med_266",
+        "med_291",
+        "med_292"
+      ]
+    },
+    "Enfermedad_inmunomediada_Perro": {
+      "nombre": "Enfermedad inmunomediada",
+      "categoria": "Inmunología",
+      "especie": "Perro",
+      "síntomas": [
+        "Ciclosporina",
+        "Azatioprina",
+        "Corticoides"
+      ],
+      "indicaciones": "Enfermedades autoinmunes. Anemias hemolíticas. Trombocitopenia inmunomediada.",
+      "contraindicaciones": "Infecciones activas. Neoplasia sospechada.",
+      "notas": "Ciclosporina efectiva en muchas condiciones. Requiere monitoreo.",
+      "medicamentos_asociados": [
+        "med_58",
+        "med_133",
+        "med_372",
+        "med_466",
+        "med_467"
+      ]
+    },
+    "Deficiencia_vitamínica_B12_Perro": {
+      "nombre": "Deficiencia vitamínica B12",
+      "categoria": "Nutrición",
+      "especie": "Perro",
+      "síntomas": [
+        "Cianocobalamina",
+        "Butafosfan"
+      ],
+      "indicaciones": "Deficiencia de B12. Anemia macrocítica. Problemas neurológicos.",
+      "contraindicaciones": "Hipersensibilidad.",
+      "notas": "Inyecciones mensuales típicamente. Complementa con dieta adecuada.",
+      "medicamentos_asociados": [
+        "med_313",
+        "med_383",
+        "med_511",
+        "med_584",
+        "med_687"
+      ]
+    },
+    "Náuseas/Vómitos_Perro": {
+      "nombre": "Náuseas/Vómitos",
+      "categoria": "Gastroenterología",
+      "especie": "Perro",
+      "síntomas": [
+        "Maropitant",
+        "Metoclopramida",
+        "Metadona"
+      ],
+      "indicaciones": "Prevención de vómitos. Postoperatorio. Quimioterapia. Cinetosis.",
+      "contraindicaciones": "Obstrucción intestinal (maropitant).",
+      "notas": "Maropitant inyectable es más efectivo. Metoclopramida oral.",
+      "medicamentos_asociados": [
+        "med_26",
+        "med_76",
+        "med_77",
+        "med_99",
+        "med_116"
+      ]
+    },
+    "Leishmaniasis_Perro": {
+      "nombre": "Leishmaniasis",
+      "categoria": "Parasitología",
+      "especie": "Perro",
+      "síntomas": [
+        "Meglumina Antimonato",
+        "Miltefosina",
+        "Domperidona"
+      ],
+      "indicaciones": "Tratamiento de leishmaniasis visceral. Profilaxis post-infección.",
+      "contraindicaciones": "Insuficiencia renal/hepática grave.",
+      "notas": "Enfermedad compleja. Requiere tratamiento prolongado. Zoonótica.",
+      "medicamentos_asociados": [
+        "med_4",
+        "med_952",
+        "med_953",
+        "med_996",
+        "med_1249"
+      ]
+    },
+    "Reacción_alérgica_aguda_Perro": {
+      "nombre": "Reacción alérgica aguda",
+      "categoria": "Dermatología",
+      "especie": "Perro",
+      "síntomas": [
+        "Difenhidramina",
+        "Cetirizina",
+        "Loratadina",
+        "Ketamina"
+      ],
+      "indicaciones": "Anafilaxia. Reacciones alérgicas sistémicas. Angioedema.",
+      "contraindicaciones": "Hipersensibilidad conocida.",
+      "notas": "Difenhidramina de acción rápida IM/IV. Cetirizina oral crónica.",
+      "medicamentos_asociados": [
+        "med_23",
+        "med_54",
+        "med_287",
+        "med_294",
+        "med_884"
+      ]
+    },
+    "Infección_fúngica_sistémica_Perro": {
+      "nombre": "Infección fúngica sistémica",
+      "categoria": "Infectología",
+      "especie": "Perro",
+      "síntomas": [
+        "Itraconazol",
+        "Ketoconazol",
+        "Fluconazol",
+        "Enilconazol"
+      ],
+      "indicaciones": "Infecciones por hongos. Dermatofitosis. Histoplasmosis.",
+      "contraindicaciones": "Insuficiencia hepática severa.",
+      "notas": "Tratamiento prolongado típicamente (6-12 semanas). Monitoreo hepático.",
+      "medicamentos_asociados": [
+        "med_46",
+        "med_259",
+        "med_893",
+        "med_896",
+        "med_1348"
+      ]
+    },
+    "Incontinencia_urinaria_Perro": {
+      "nombre": "Incontinencia urinaria",
+      "categoria": "Urología",
+      "especie": "Perro",
+      "síntomas": [
+        "Fenilpropanolamina Hidrocloruro",
+        "Estriol"
+      ],
+      "indicaciones": "Incontinencia urinaria post-gonadectomía. Debilidad del esfínter urinario.",
+      "contraindicaciones": "Hipersensibilidad. Problemas cardíacos. Hipertensión sin control.",
+      "notas": "Fenilpropanolamina es primera línea. Estriol en hembras. Mejora con dosis progresiva.",
+      "medicamentos_asociados": [
+        "med_122",
+        "med_414",
+        "med_1046",
+        "med_1052",
+        "med_1173"
+      ]
+    },
+    "Dolor_avanzado/Manejo_multimodal_Perro": {
+      "nombre": "Dolor avanzado/Manejo multimodal",
+      "categoria": "Analgesia",
+      "especie": "Perro",
+      "síntomas": [
+        "Buprenorfina Hidrocloruro",
+        "Fentanilo Citrato",
+        "Butorfanol Tartrato",
+        "Metadona Hidrocloruro",
+        "Tramadol"
+      ],
+      "indicaciones": "Control del dolor crónico. Dolor postoperatorio severo. Cáncer. Paliativos.",
+      "contraindicaciones": "Dependencia previa a opioides. Hipersensibilidad. Insuficiencia respiratoria.",
+      "notas": "Buprenorfina tiene techo analgesico. Fentanilo para dolor severo. Tramadol oral crónico.",
+      "medicamentos_asociados": [
+        "med_26",
+        "med_80",
+        "med_88",
+        "med_89",
+        "med_90"
+      ]
+    },
+    "Problemas_respiratorios_crónicos_Perro": {
+      "nombre": "Problemas respiratorios crónicos",
+      "categoria": "Neumología",
+      "especie": "Perro",
+      "síntomas": [
+        "Bromhexina Hidrocloruro",
+        "Propentofilina",
+        "Butafosfan"
+      ],
+      "indicaciones": "Bronquitis crónica. Tos crónica. Mejora de función respiratoria. Soporte hepático.",
+      "contraindicaciones": "Hipersensibilidad. Úlcera gástrica activa.",
+      "notas": "Bromhexina mejora clearance mucociliar. Propentofilina para rheología sangre. Butafosfan soporte energético.",
+      "medicamentos_asociados": [
+        "med_119",
+        "med_313",
+        "med_383",
+        "med_511",
+        "med_544"
+      ]
+    }
+  }
+}

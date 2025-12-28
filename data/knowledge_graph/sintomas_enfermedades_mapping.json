@@ -1,0 +1,378 @@
+{
+  "metadata": {
+    "total_sintomas": 102,
+    "fecha_creacion": "2024-11-26"
+  },
+  "sintomas_enfermedades": {
+    "Fipronilo": [
+      "Pulgas",
+      "Pulgas",
+      "Garrapatas"
+    ],
+    "Imidacloprid": [
+      "Pulgas",
+      "Pulgas",
+      "Garrapatas"
+    ],
+    "Fluralaner": [
+      "Pulgas",
+      "Pulgas",
+      "Garrapatas",
+      "Sarna sarcóptica"
+    ],
+    "Fipronil": [
+      "Pulgas"
+    ],
+    "Selamectina": [
+      "Pulgas",
+      "Pulgas",
+      "Sarna sarcóptica",
+      "Sarna sarcóptica"
+    ],
+    "Permetrina": [
+      "Garrapatas"
+    ],
+    "Deltametrina": [
+      "Garrapatas"
+    ],
+    "Ivermectina": [
+      "Sarna sarcóptica",
+      "Sarna sarcóptica"
+    ],
+    "Milbemicina Oxima": [
+      "Sarna sarcóptica",
+      "Sarna sarcóptica",
+      "Nematodos intestinales",
+      "Nematodos intestinales"
+    ],
+    "Moxidectina": [
+      "Sarna sarcóptica",
+      "Sarna sarcóptica",
+      "Nematodos intestinales",
+      "Nematodos intestinales"
+    ],
+    "Prazicuantel": [
+      "Nematodos intestinales",
+      "Nematodos intestinales"
+    ],
+    "Pirantel Embonato": [
+      "Nematodos intestinales",
+      "Nematodos intestinales"
+    ],
+    "Febantel": [
+      "Nematodos intestinales"
+    ],
+    "Emodepsida": [
+      "Nematodos intestinales"
+    ],
+    "Enrofloxacino": [
+      "Otitis externa",
+      "Otitis externa",
+      "Infección bacteriana sistémica",
+      "Infección bacteriana sistémica",
+      "Infección urinaria",
+      "Infección urinaria",
+      "Gastroenteritis",
+      "Gastroenteritis"
+    ],
+    "Marbofloxacino": [
+      "Otitis externa",
+      "Otitis externa",
+      "Infección bacteriana sistémica",
+      "Infección bacteriana sistémica",
+      "Infección urinaria",
+      "Infección urinaria",
+      "Gastroenteritis",
+      "Gastroenteritis"
+    ],
+    "Clindamicina Hidrocloruro": [
+      "Otitis externa",
+      "Otitis externa",
+      "Infección bacteriana sistémica",
+      "Infección bacteriana sistémica",
+      "Gastroenteritis",
+      "Gastroenteritis"
+    ],
+    "Metronidazol": [
+      "Otitis externa",
+      "Otitis externa",
+      "Gastroenteritis",
+      "Gastroenteritis"
+    ],
+    "Prednisolona": [
+      "Dermatitis alérgica",
+      "Dermatitis alérgica"
+    ],
+    "Dexametasona Fosfato Sodio": [
+      "Dermatitis alérgica",
+      "Dermatitis alérgica"
+    ],
+    "Carprofeno": [
+      "Dermatitis alérgica",
+      "Dolor/Inflamación articular"
+    ],
+    "Meloxicam": [
+      "Dermatitis alérgica",
+      "Dermatitis alérgica",
+      "Dolor/Inflamación articular",
+      "Dolor/Inflamación articular"
+    ],
+    "Oclacitinib Maleato": [
+      "Dermatitis alérgica"
+    ],
+    "Amoxicilina Trihidrato": [
+      "Infección bacteriana sistémica",
+      "Infección bacteriana sistémica",
+      "Infección urinaria",
+      "Infección urinaria"
+    ],
+    "Clavulanato Potasio": [
+      "Infección bacteriana sistémica",
+      "Infección bacteriana sistémica",
+      "Infección urinaria",
+      "Infección urinaria"
+    ],
+    "Cefalexina Monohidrato": [
+      "Infección bacteriana sistémica",
+      "Infección urinaria"
+    ],
+    "Robenacoxib": [
+      "Dolor/Inflamación articular",
+      "Dolor/Inflamación articular"
+    ],
+    "Firocoxib": [
+      "Dolor/Inflamación articular"
+    ],
+    "Tramadol Hidrocloruro": [
+      "Dolor/Inflamación articular",
+      "Dolor/Inflamación articular"
+    ],
+    "Pimobendan": [
+      "Insuficiencia cardíaca"
+    ],
+    "Benazepril Hidrocloruro": [
+      "Insuficiencia cardíaca"
+    ],
+    "Doxorrubicina": [
+      "Insuficiencia cardíaca"
+    ],
+    "Tiamazol": [
+      "Hipertiroidismo"
+    ],
+    "Levotiroxina Sodica": [
+      "Hipertiroidismo",
+      "Convulsiones/Epilepsia"
+    ],
+    "Insulina": [
+      "Diabetes mellitus"
+    ],
+    "Fenobarbital": [
+      "Convulsiones/Epilepsia"
+    ],
+    "Trilostano": [
+      "Convulsiones/Epilepsia"
+    ],
+    "Medroxiprogesterona Acetato": [
+      "Control de celo"
+    ],
+    "Virus del Moquillo Canino": [
+      "Inmunización - Moquillo/Parvovirus"
+    ],
+    "Parvovirus Canino": [
+      "Inmunización - Moquillo/Parvovirus"
+    ],
+    "Vivo Atenuado": [
+      "Inmunización - Moquillo/Parvovirus",
+      "Inmunización - Felina"
+    ],
+    "Inactivada": [
+      "Inmunización - Moquillo/Parvovirus",
+      "Inmunización - Leptospira",
+      "Inmunización - Felina"
+    ],
+    "Leptospira Interrogans": [
+      "Inmunización - Leptospira"
+    ],
+    "Serovariedad Canicola": [
+      "Inmunización - Leptospira"
+    ],
+    "Virus Rabia": [
+      "Inmunización - Rabia"
+    ],
+    "Inactivado": [
+      "Inmunización - Rabia"
+    ],
+    "Bordetella Bronchiseptica": [
+      "Inmunización - Respiratorio"
+    ],
+    "Parainfluenza Canina": [
+      "Inmunización - Respiratorio"
+    ],
+    "Adenovirus Canino": [
+      "Inmunización - Respiratorio"
+    ],
+    "Panleucopenia Felina": [
+      "Inmunización - Felina"
+    ],
+    "Calicivirus Felino": [
+      "Inmunización - Felina"
+    ],
+    "Medetomidina Hidrocloruro": [
+      "Sedación prequirúrgica"
+    ],
+    "Dexmedetomidina": [
+      "Sedación prequirúrgica"
+    ],
+    "Acepromazina": [
+      "Sedación prequirúrgica"
+    ],
+    "Xilacina": [
+      "Sedación prequirúrgica"
+    ],
+    "Propofol": [
+      "Anestesia general"
+    ],
+    "Ketamina": [
+      "Anestesia general",
+      "Reacción alérgica aguda"
+    ],
+    "Tiletamina": [
+      "Anestesia general"
+    ],
+    "Alfaxalona": [
+      "Anestesia general"
+    ],
+    "Isoflurano": [
+      "Anestesia general"
+    ],
+    "Sevoflurano": [
+      "Anestesia general"
+    ],
+    "Afoxolaner": [
+      "Pulgas/Garrapatas orales"
+    ],
+    "Lotilaner": [
+      "Pulgas/Garrapatas orales",
+      "Pulgas/Garrapatas orales"
+    ],
+    "Spinosad": [
+      "Pulgas/Garrapatas orales",
+      "Pulgas/Garrapatas orales"
+    ],
+    "Nitenpiram": [
+      "Pulgas/Garrapatas orales"
+    ],
+    "Lufenuron": [
+      "Pulgas/Garrapatas orales"
+    ],
+    "Indoxacarb": [
+      "Pulgas/Garrapatas orales"
+    ],
+    "Diltiazem": [
+      "Arritmias cardíacas"
+    ],
+    "Atenolol": [
+      "Arritmias cardíacas"
+    ],
+    "Propranolol": [
+      "Arritmias cardíacas"
+    ],
+    "Digoxina": [
+      "Arritmias cardíacas"
+    ],
+    "Furosemida": [
+      "Edema/Congestión cardíaca"
+    ],
+    "Torasemida": [
+      "Edema/Congestión cardíaca"
+    ],
+    "Espironolactona": [
+      "Edema/Congestión cardíaca"
+    ],
+    "Clorotiazida": [
+      "Edema/Congestión cardíaca"
+    ],
+    "Ciclosporina": [
+      "Enfermedad inmunomediada"
+    ],
+    "Azatioprina": [
+      "Enfermedad inmunomediada"
+    ],
+    "Corticoides": [
+      "Enfermedad inmunomediada"
+    ],
+    "Cianocobalamina": [
+      "Deficiencia vitamínica B12"
+    ],
+    "Butafosfan": [
+      "Deficiencia vitamínica B12",
+      "Problemas respiratorios crónicos"
+    ],
+    "Maropitant": [
+      "Náuseas/Vómitos"
+    ],
+    "Metoclopramida": [
+      "Náuseas/Vómitos"
+    ],
+    "Metadona": [
+      "Náuseas/Vómitos"
+    ],
+    "Meglumina Antimonato": [
+      "Leishmaniasis"
+    ],
+    "Miltefosina": [
+      "Leishmaniasis"
+    ],
+    "Domperidona": [
+      "Leishmaniasis"
+    ],
+    "Difenhidramina": [
+      "Reacción alérgica aguda"
+    ],
+    "Cetirizina": [
+      "Reacción alérgica aguda"
+    ],
+    "Loratadina": [
+      "Reacción alérgica aguda"
+    ],
+    "Itraconazol": [
+      "Infección fúngica sistémica"
+    ],
+    "Ketoconazol": [
+      "Infección fúngica sistémica"
+    ],
+    "Fluconazol": [
+      "Infección fúngica sistémica"
+    ],
+    "Enilconazol": [
+      "Infección fúngica sistémica"
+    ],
+    "Fenilpropanolamina Hidrocloruro": [
+      "Incontinencia urinaria"
+    ],
+    "Estriol": [
+      "Incontinencia urinaria"
+    ],
+    "Buprenorfina Hidrocloruro": [
+      "Dolor avanzado/Manejo multimodal"
+    ],
+    "Fentanilo Citrato": [
+      "Dolor avanzado/Manejo multimodal"
+    ],
+    "Butorfanol Tartrato": [
+      "Dolor avanzado/Manejo multimodal"
+    ],
+    "Metadona Hidrocloruro": [
+      "Dolor avanzado/Manejo multimodal"
+    ],
+    "Tramadol": [
+      "Dolor avanzado/Manejo multimodal"
+    ],
+    "Bromhexina Hidrocloruro": [
+      "Problemas respiratorios crónicos"
+    ],
+    "Propentofilina": [
+      "Problemas respiratorios crónicos"
+    ]
+  }
+}

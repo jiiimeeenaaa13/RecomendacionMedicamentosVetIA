@@ -1,16 +1,190 @@
+
+
+(venv) jimena@DESKTOP-00H7DVC:/mnt/c/Users/Usuario/Documents/SIBI/RecomendacionMedicamentosVetIA$ tree -L 1 . ├── config ├── data ├── notebooks ├── README.md ├── requirements.txt ├── src ├── tests └── venv 7 directories, 2 files (venv) jimena@DESKTOP-00H7DVC:/mnt/c/Users/Usuario/Documen
+
+pasted
+
+
+import os import json from groq import Groq from dotenv import load_dotenv load_dotenv() class GroqIntegration: """Integración con Groq API + búsqueda inteligente en datos locales""" def __init__(self): api_key = os.getenv("GROQ_API_KEY") if not a
+
+pasted
+
+
+import streamlit as st import sys, os sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))) from processing.smart_recommendation_engine import SmartRecommendationEngine from processing.groq_integration import GroqIntegration # ============ CONFIGURACIÓN ===========
+
+pasted
+
+Hola , te voy  a explicar un proyecto que tenemos que hacer para clase , tenemos que crear un LLM  usando llamaINdex, Ollama, Rag , que se ejecute en local que te responda con coherencia y bien dentro de lo que este especializada , la cuestion es que mi IA es de Recomendacion de Medicamentos enfocado a un uso de un vterinario , usando los datos oficiales del CIMAVET, mi estructura es esta :  tambien te adjuntare algunas clases y problemas que he tenido : Resulta que intente utilizar llamaIndex ollama , diferentes modelos de ollama y la mayoria no me funcionaban por memoria y el resto eran demasiado tontos y no me servia , vi la opcion de utilizar GROQ API , necesito que entiendas mi proyecto y me digas que necesitas que te pase para yo ahora ponerme a trabajar , mejorarle y corregir errores
+
+Perfecto, he entendido tu proyecto. Déjame resumir lo que veo:
+
+Resumen de tu Proyecto 🐾
+Objetivo: LLM especializado en recomendación de medicamentos veterinarios usando datos CIMAVET (oficiales)
+
+Estado actual:
+
+Estructura bien organizada (config, data, src, tests)
+Base de datos de 1660 medicamentos + grafo de enfermedades
+Integración con Groq API (por problemas de memoria con Ollama local)
+Streamlit como interfaz
+Sistema de búsqueda local + fallback a Groq
+Problema que identifico: Intentaste usar LlamaIndex + Ollama pero los modelos locales no tenían suficiente memoria o eran "tontos" para el contexto veterinario.
+
+Lo que necesito de ti para ayudarte mejor:
+1. Archivos críticos que faltan:
+requirements.txt (completo con versiones)
+smart_recommendation_engine.py (el motor de recomendaciones)
+recommendation_engine.py (¿hay dos motores?)
+.env.example o estructura de variables
+Algún archivo de los datos JSON (ejemplo pequeño de estructura)
+2. Errores/Problemas específicos:
+¿Qué errores exactos te daban los modelos de Ollama? (memoria OOM, respuestas irrelevantes, latencia)
+¿Qué versión de LlamaIndex usaste?
+¿El sistema actual con Groq funciona bien o tiene bugs?
+3. Decisiones de diseño:
+¿Groq API es definitivo o quieres intentar nuevamente con local?
+¿Necesitas soporte para múltiples idiomas (español/inglés)?
+¿El RAG debe ser en tiempo real o puedes pre-indexar?
+4. Requisitos de clase:
+¿Es obligatorio usar LlamaIndex o es flexible?
+¿Ollama local es requisito o puedes usar API?
+¿Qué criterios de evaluación tienes?
+Qué puedo hacer por ti:
+✅ Optimizar la integración Groq + RAG local
+✅ Mejorar el smart_recommendation_engine.py
+✅ Refactorizar la búsqueda de medicamentos (actualmente parece manual)
+✅ Crear un sistema RAG propio sin LlamaIndex si es necesario
+✅ Mejorar extracción de parámetros (especie, peso, raza)
+✅ Agregar validación de dosis según peso/especie
+✅ Tests unitarios
+✅ Documentación profesional
+
+Pasa primero:
+
+requirements.txt completo
+smart_recommendation_engine.py
+Un ejemplo de tu JSON de medicamentos (primeras 3 entradas)
+Los errores específicos que tuviste con Ollama/LlamaIndex
+Con eso empezamos a mejorar el proyecto. 🚀
+
+
+""" Motor de recomendación INTELIGENTE que: - Filtra TOP 10 medicamentos (no 34) - Calcula dosis exacta por peso - Considera predisposiciones de raza - Extrae parámetros de texto natural - Compatible con ambas interfaces (Chat + Clásico) """ import json import re from typing import Dict,
+
+pasted
+
+
+""" Motor de recomendación INTELIGENTE que: - Filtra TOP 10 medicamentos (no 34) - Calcula dosis exacta por peso - Considera predisposiciones de raza - Extrae parámetros de texto natural """ import json import re from typing import Dict, List, Tuple from pathlib import Path class Smar
+
+pasted
+
+Te adjunto los documentos pedidos : # Interface streamlit==1.28.2  # Groq API groq>=0.4.1  # Environment python-dotenv==1.0.0  # Utilities requests==2.31.0  # OPCIONAL (mantén si los usas) # pandas==2.1.3 # numpy==1.26.2 # jupyter==1.0.0 ,  y dime como te puedo mandar el resto de archivos
+
+Perfecto, ahora veo mucho mejor tu proyecto. Déjame organizarlo todo y decirte qué me falta para optimizarlo completamente.
+
+Análisis Completo - Medicamentos Veterinarios IA
+Documento 
+Perfecto. Ahora que entiendo bien tu proyecto, estos son los archivos que necesito en orden:
+
+📥 Cómo pasarme archivos:
+Opción A: Copy-paste directo aquí
+Si los JSONs son pequeños (<2000 líneas), copy-pastes el contenido directamente en el chat.
+
+Opción B: Mostrarme la estructura con comandos
+bash
+# En tu terminal, ejecuta esto:
+head -50 data/knowledge_graph/mapeo_enfermedades_medicamentos.json
+cat data/knowledge_graph/dosis_medicamentos.json
+cat data/knowledge_graph/razas_predisposiciones.json
+cat requirements.txt
+ls -lah data/knowledge_graph/  # Ver tamaños
+Opción C: Archivos ZIP/comprimidos
+Si es muy grande, comprime la carpeta data/ y requirements.txt
+
+🎯 Lo que voy a hacer cuando tengas estos archivos:
+✅ Identificar y fixear bugs en el motor inteligente
+✅ Crear RAG local sin LlamaIndex (usando Chroma o simple búsqueda vectorial)
+✅ Implementar fallback Ollama → Groq (lo mejor de ambos mundos)
+✅ Mejorar extracción de parámetros (regex más robusta)
+✅ Tests unitarios
+✅ Documentación profesional
+✅ Exportar a PDF
+¿Cuál opción prefieres para pasar los archivos? 😊
+
+
+(venv) jimena@DESKTOP-00H7DVC:/mnt/c/Users/Usuario/Documents/SIBI/RecomendacionMedicamentosVetIA$ head -100 data/knowledge_graph/mapeo_enfermedades_medicamentos.json { "metadata": { "total_medicamentos": 1660, "total_enfermedades": 44, "total_correlaciones": 2341 }, "medicam
+
+pasted
+
+Perfecto, ahora tengo TODO lo que necesito. Voy a crear un plan de acción detallado y empezar a arreglarte el proyecto.
+
+Plan de Mejora Detallado - Proyecto Medicamentos Veterinarios
+Documento 
+Perfecto. Ahora voy a crear la versión mejorada y corregida de tu proyecto. Empezaré con lo más crítico:
+
+SmartRecommendationEngine - VERSIÓN CORREGIDA
+Código 
+Excelente. Ahora voy a crear el archivo de configuración mejorado y el requirements.txt completo:
+
+requirements.txt y .env.example - ACTUALIZADO
+Código 
+Ahora voy a crear un archivo de validación de datos y tests unitarios:
+
+Validators y Tests Unitarios
+Código 
+Ahora voy a crear un Makefile para automatizar tareas y un README mejorado:
+
+Makefile y README Mejorado
+Código 
+Perfecto. Ahora voy a crear un documento de resumen ejecutivo con todo lo que necesitas hacer:
+
+📋 GUÍA DE IMPLEMENTACIÓN - Pasos Exactos
+Documento 
+
+
+
+
+
+
+
+# ========== requirements.txt (COMPLETO CON VERSIONES PINNED) ==========
+
 # Interface
 streamlit==1.28.2
+streamlit-option-menu==0.3.2
 
 # Groq API
-groq>=0.4.1
+groq==0.10.0
+
+# Ollama (para RAG local - OPCIONAL)
+ollama==0.3.1
+
+# RAG y búsqueda vectorial
+chromadb==0.4.24
+sentence-transformers==3.0.1
 
 # Environment
 python-dotenv==1.0.0
 
 # Utilities
 requests==2.31.0
+pydantic==2.5.0
 
-# OPCIONAL (mantén si los usas)
-# pandas==2.1.3
-# numpy==1.26.2
-# jupyter==1.0.0
+# Data processing
+pandas==2.1.3
+numpy==1.26.2
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+
+# Development
+black==23.12.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Logging
+python-json-logger==2.0.7
+
+# Optional: Jupyter
+jupyter==1.0.0
+ipython==8.18.1
